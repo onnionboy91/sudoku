@@ -65,8 +65,8 @@ function searchEl(arr) {
   for (let i = 0; i < arr.length; i++){
     for (let j = 0; j < arr[i].length; j++) {
       if (arr[i][j] === '-') {
-        const values = posValues(arr[i],i,j)
-        // console.log(values[0], values);
+        const values = posValues(arr,i,j)
+        console.log(values[0], values);
         arr[i][j] = values[0];
       }
     }
@@ -76,7 +76,7 @@ function searchEl(arr) {
 
 function posValues(arr, x, y) {
   const elements = [];
-  for (let el of arr) {
+  for (let el of arr[x]) {
     if ( el === '-' ) continue
     elements.push(el)
   }
